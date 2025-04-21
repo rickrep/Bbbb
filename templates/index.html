@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0"><i class="fas fa-book me-2"></i>Переводчик Текстов</h3>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    Загрузите текстовый файл для перевода на русский язык
+                </div>
+                
+                <form id="translation-form" enctype="multipart/form-data">
+                    <div class="mb-4">
+                        <label for="novel-file" class="form-label">Загрузите текстовый файл (.txt)</label>
+                        <input type="file" class="form-control" id="novel-file" name="novel_file" accept=".txt" required>
+                        <div class="form-text">Максимальный размер файла: 50MB</div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="custom-prompt-text" class="form-label">Дополнительные инструкции (по желанию)</label>
+                        <textarea class="form-control" id="custom-prompt-text" name="custom_prompt" rows="2" placeholder="Укажите дополнительные инструкции для перевода..."></textarea>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary" id="submit-btn">
+                            <i class="fas fa-language me-2"></i>Начать Перевод
+                        </button>
+                    </div>
+                </form>
+                
+                <!-- Translation Progress Section (initially hidden) -->
+                <div id="translation-progress-section" class="mt-4 d-none">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0"><i class="fas fa-spinner me-2"></i>Прогресс перевода</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="progress mb-3" style="height: 25px;">
+                                <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" 
+                                     role="progressbar" style="width: 0%;" 
+                                     aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                            </div>
+                            <div id="progress-status" class="text-center mb-3">
+                                Подготовка к переводу...
+                            </div>
+                            <div id="download-section" class="text-center d-none">
+                                <a id="download-link" href="#" class="btn btn-success">
+                                    <i class="fas fa-download me-2"></i>Скачать перевод
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-secondary text-white">
+                <h4 class="mb-0"><i class="fas fa-info-circle me-2"></i>Как это работает</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-file-upload fa-3x mb-3 text-primary"></i>
+                                <h5>1. Загрузите файл</h5>
+                                <p>Загрузите текстовый файл (.txt) с текстом для перевода</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-cogs fa-3x mb-3 text-primary"></i>
+                                <h5>2. Обработка</h5>
+                                <p>Система разбивает текст на фрагменты, сохраняя контекст между ними</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 border-0 shadow-sm">
+                            <div class="card-body text-center">
+                                <i class="fas fa-download fa-3x mb-3 text-primary"></i>
+                                <h5>3. Получите перевод</h5>
+                                <p>Загрузите готовый перевод с сохраненным форматированием</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
