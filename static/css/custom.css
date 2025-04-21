@@ -1,0 +1,91 @@
+/* Custom styles to enhance Bootstrap */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23) !important;
+}
+
+.card-header {
+    border-bottom: none;
+}
+
+.form-control, .form-select {
+    padding: 0.6rem 0.75rem;
+    border-radius: 6px;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.progress {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 25px;
+}
+
+/* Better visual hierarchy for the how it works section */
+.fas.fa-3x {
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+/* Styling for alerts */
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+/* Custom styling for the download button */
+#download-link {
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#download-link:hover {
+    transform: scale(1.05);
+}
+
+/* Visual feedback for file uploads */
+.form-control[type="file"]:focus {
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* Smooth transitions for progress bar */
+#progress-bar {
+    transition: width 0.5s ease;
+}
+
+/* Make textarea larger for better UX */
+textarea.form-control {
+    min-height: 100px;
+}
